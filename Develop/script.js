@@ -82,11 +82,11 @@ function generatePassword() {
   lowerChoice();
   numChoice();
   specialChoice();
+  if (upperPrompt, lowerPrompt, numPrompt, specialPrompt})
   return;
 };
 
  //  for loop to randomly select possible characters
-//  Currently UNDEFINED
  function choosePass () {
   for (let index = 0; index < possibleCharacters.passLength; index++) {
     var random = Math.floor(Math.random(possibleCharacters[index]) * possibleCharacters.length);
