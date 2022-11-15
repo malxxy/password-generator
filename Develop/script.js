@@ -92,15 +92,15 @@ generate.addEventListener("click",generatePassword);
 
 // Check if number confirm === true, if so concat possible Chracters array with numbersArray then push one random number from numbers array into guarantted characters array
 // if (numberConfirm === true) {
-// //   possibleCharacters.concat(numbersArray)
+//   possibleCharacters.concat(numbersArray)
 // }
-// // ^ combines array to make new array
-// // guaranteedCharacters/push(math.floor or math.random to randomly grab from array)
-// // }
+// ^ combines array to make new array
+// guaranteedCharacters/push(math.floor or math.random to randomly grab from array)
+// }
 
 for (let index = 0; index < array.lengththatuserinputed; index++) {
 // randomly grab value out of char array and push value into result array
-// }
+};
 
 //  Another for loop that will loop thru guaranteed characters
 for (let index = 0; index < guaranteedCharacters.numChars; index++) {
@@ -108,16 +108,12 @@ for (let index = 0; index < guaranteedCharacters.numChars; index++) {
    var password = guaranteedCharacters.join("") // converts array into string
    };
 
-// // Write password to the #password input
-// // function writePassword() {
-// //   var password = generatePassword();
-// //   var passwordText = document.querySelector("#password");
+// Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-// //   passwordText.value = password;
-// // }
+//   passwordText.value = password;
+// }
 
-// // // Add event listener to generate button
-// // generateBtn.addEventListener("click", writePassword);
-// // // On event of "click" we want to run right password function
-
-// document.getElementById("password").innerHTML = "Your password is" + password;
+document.getElementById("password").innerHTML = "Your password is" + password;
