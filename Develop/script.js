@@ -1,5 +1,8 @@
 // Assignment code here
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
 // Create 4 variables for character types lowercase alphabet, uppercase alphabet, numbers, and special characters
 var lowercase = "abcdefghijklmnopqrstuvwxyz".split("") // .split puts every letter into an array .split(" "") indicates the paramters for splitting
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -21,15 +24,22 @@ var result = [];
 
 // Function that asks user how many characters they would like their password to be
 function characters() {
-  var chooseChars = prompt("How many characters would you like your password to be? Must be at least 8 and no more than 128 characters.");
-  if (chooseChars >= 8 && chooseChars <= 128) {
-    chooseChars = numChars;
-  // } else if (chooseChars.isNaN(length) == true) {
-  //   alert("Please choose a number between 8 and 128.");
-  } else {
-    alert("Your password length must be at least 8 characters and no more than 128 characters.")
-  }
+   var chooseChars = prompt("How many characters would you like your password to be? Must be at least 8 and no more than 128 characters.");
+   if (chooseChars >= 8 || chooseChars <= 128) {
+     chooseChars = numChars;
+     generatePassword();
+   // } else if (chooseChars.isNaN(length) == true) {
+   //   alert("Please choose a number between 8 and 128.");
+   } else {
+     alert("Your password length must be at least 8 characters and no more than 128 characters.")
+    generatePassword();
+   }
+   return;
 };
+
+// Parse int option
+// changes string 8 into the number 8
+// numChars = parseInt(prompt("How many characters would you like your password to be? It must be at least 8 and no more than 128 characters."))
 
 // Function that asks for users if they would like to include uppercase letters
 function upperChoice() {
@@ -37,8 +47,8 @@ function upperChoice() {
   upperPrompt = upperPrompt.toLowerCase();
   if (upperPrompt === "yes") {
     possibleCharacters.push(uppercase);
-     // Add code to push AT LEAST ONE RANDOM LOWERCASE to "guaranteed chracters"
-    // return;
+    var upperRandom = Math.floor(Math.random(uppercase)) // Pushes all uppercase letters to "posssible characters" array
+    guaranteedCharacters.push(upperRandom);// Pushes one random uppercase letter into guaranteed characters
   }
 };
 
@@ -71,31 +81,16 @@ function specialChoice() {
 
 // Function that includes ALL PROMPTS
 function generatePassword() {
-  characters();
   upperChoice();
   lowerChoice();
   numChoice();
   specialChoice();
+  characters();
 };
 
 generate.addEventListener("click",generatePassword);
 
-//  Create a generate password function
-// function generatePassword() {
-// create variable that holds prompt asking user how many characters they want
-
-//  If length less than 8 or greater than 128 THEN return user alert saying password must be between 8 and 128 characters
-
-
-//  Varaibles holding confirms - i think confirms means pop up
-// var uppercaseConfirm = 
-// 
-//  asking if user would like lowercase uppercase numbers or special characters
-
-// if user does not confirm any character type, then we alert user that they must select 1 and return them back to start
-//  if uppercaseConfirm, lowercaseConfirm, .... ALL FALSE, then 
-
- // Check if number confirm === true, if so concat possible Chracters array with numbersArray then push one random number from numbers array into guarantted characters array
+// Check if number confirm === true, if so concat possible Chracters array with numbersArray then push one random number from numbers array into guarantted characters array
 // if (numberConfirm === true) {
 // //   possibleCharacters.concat(numbersArray)
 // }
@@ -103,18 +98,15 @@ generate.addEventListener("click",generatePassword);
 // // guaranteedCharacters/push(math.floor or math.random to randomly grab from array)
 // // }
 
-// // for (let index = 0; index < array.lengththatuserinputed; index++) {
-//   // randomly grab value out of char array and push value into result array
+for (let index = 0; index < array.lengththatuserinputed; index++) {
+// randomly grab value out of char array and push value into result array
 // }
 
 //  Another for loop that will loop thru guaranteed characters
-// for (let index = 0; index < guaranteedCharacters.numChars; index++) {
-//   var random = math.random(guaranteedCharacters[index]);
-//   var password = guaranteedCharacters.join("");
-// };
-
-// // // Get references to the #generate element
-// // var generateBtn = document.querySelector("#generate");
+for (let index = 0; index < guaranteedCharacters.numChars; index++) {
+   var random = math.random(guaranteedCharacters[index]);
+   var password = guaranteedCharacters.join("") // converts array into string
+   };
 
 // // Write password to the #password input
 // // function writePassword() {
