@@ -13,8 +13,10 @@ N/A
 Access this page [here](https://malxxy.github.io/password-generator/).
 Access the GitHub repository [here](https://github.com/malxxy/password-generator).
 <br>
+
 Select the "Generate" button and the user will be led through various prompts to personalize your password. After the user answers all the prompts a password with their desired characters and desired length is generated.
 <br>
+
 Password Generator homescreen:
 ![password generator homescreen](./assets/passGen.png)
 <br>
