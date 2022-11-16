@@ -14,13 +14,19 @@ var lengthPassword = NaN;
 // Prompt that asks user for password length
 function prompts() {
   var chooseChars = prompt("How many characters would you like your password to be? Must be at least 8 and no more than 128 characters.");
-  if (chooseChars >= 8 || chooseChars <= 128) {
+  if (chooseChars >= 8 && chooseChars <= 128) {
       var passLength = chooseChars;
       console.log("User chosen password length",passLength);
+    } else if (chooseChars < 8) {
+      alert("Your password length must be at least 8 characters.");
+      prompts();
+    } else if (chooseChars > 128) {
+      alert("Your password length must be no more than 128 characters.")
+      prompts();
     } else {
-    alert("Your password length must be at least 8 characters and no more than 128 characters.");
-    generatePassword();
-  };
+      alert("Please enter a number.")
+      prompts();
+    };
 
   var upperPrompt = confirm("Would you like your password to include uppercase letters?");
   if (upperPrompt === true) {
@@ -84,7 +90,3 @@ function writePassword () {
 };
 
 generate.addEventListener("click",prompts);
-
-// NOTES 
- // } else if (chooseChars.isNaN(length) == true) {
-   //   alert("Please choose a number between 8 and 128.");
