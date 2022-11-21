@@ -87,6 +87,10 @@ function choosePassword () {
 function writePassword () {
   var userPassword = choosePassword();
   document.getElementById("password").innerHTML = "Your password is " + userPassword;
+  // Empty array so that password length resets when user tries to generate an additional password
+  guaranteedCharacters = "";
+  includedChar = "";
+  lengthPassword = NaN;
 };
 
 generate.addEventListener("click",prompts);
